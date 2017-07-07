@@ -21,11 +21,10 @@
  */
 
 // settings start
-//var server = "http://localhost/REST/server.php";
-var server = "https://app.uni-mannheim.de/REST/server.php";
+var server = ""; //secret
 var notification = 0;
-var http_user = "umapphttp";
-var http_password = "T1dG&bpaz";
+var http_user = ""; //secret
+var http_password = ""; //secret
 // settings end
 
 var app = angular.module('umapp', ['ionic','ionic.service.core', 'ionic.service.push','ngCordova',  'ion-sticky', 'pascalprecht.translate', 'ionic-native-transitions']);
@@ -398,6 +397,3 @@ app.run(function($ionicPlatform, $http, $rootScope, $ionicPush, $ionicUser, $sce
     $urlRouterProvider.otherwise('/app/home');
   }
 });
-
-
-
