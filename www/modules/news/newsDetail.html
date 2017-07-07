@@ -1,0 +1,22 @@
+<ion-view view-title="{{'NEWS.TITLE' | translate}}">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-text-wrap">
+                <b ng-bind-html="news.title"></b>
+                <p>{{news.pubdate}}</p>
+            </div>
+            <div class="item item-body">
+                <div ng-bind-html="news.content">
+                </div>
+                <p>
+                    <span class="uni-badge uni-blue subdued">{{news.category}}</span>
+                </p>
+            </div>
+            <a class="item item-icon-left item-icon-right" ng-href="{{news.link}}" onclick='window.open(this.href, "_system", "location=yes"); return false;'>
+            <i class="icon ion-earth"></i>
+            {{'NEWS.LINK' | translate}}
+            <i class="icon ion-share" id="leaveIcon"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

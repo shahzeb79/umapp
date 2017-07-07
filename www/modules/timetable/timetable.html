@@ -1,0 +1,19 @@
+<ion-view view-title="{{'TIMETABLE.TITLE' | translate}}">
+    <ion-content>
+        <!-- Subheader -->
+        <div class="item item-divider">
+            {{'TIMETABLE.CHOICE' | translate}}:
+        </div>
+
+        <!-- Station Overview -->
+        <ion-list ng-repeat="station in stations">
+            <a class="item item-thumbnail-left item-icon-right item-text-wrap" id="trainStopItem" href="#/app/timetable/:{{station.hafasID}}">
+                <img id="{{station.imgID}}">
+                <b>{{station.name}}</b>
+                <p>{{'TIMETABLE.TRAINLINES' | translate}}: {{station.trainLines}}<br>
+                {{'TIMETABLE.BUSLINES' | translate}}: {{station.busLines}}</p>
+                <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+            </a>
+        </ion-list>
+    </ion-content>
+</ion-view>

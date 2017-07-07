@@ -1,0 +1,30 @@
+<ion-view view-title="Radioaktiv">
+  <ion-content>
+    <div class="list card">
+                <ion-item class="item-divider item-icon-left" >
+                    <i class="icon ion-radio-waves"></i>
+                    <b>Radio</b>
+                </ion-item>
+                <ion-item class="item-thumbnail-left" id="homeRadioCard">
+                    <img id="radioThumb">
+                    <b>radioaktiv - Campusradio Rhein-Neckar</b>
+                    <h2>Mannheim, Ludwigshafen, Heidelberg</h2>
+                    <h2>{{'RADIO.PLAYING' | translate}}: {{item}}</h2>
+                </ion-item>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" ng-click="playWebAudio()" ></a>
+                    <ion-item class="tabs tabs-secondary tabs-icon-left">
+                        <a class="tab-item"  ng-click="playWebAudio()" ng-disabled="isDisabled" ng-model="isDisabled">
+                        <i class="icon ion-ios-play"></i>
+                        {{'RADIO.PLAY' | translate}}
+                        </a>
+                        <a class="tab-item"  ng-click="stopWeb()">
+                        <i class="icon ion-android-checkbox-blank"></i>
+                        {{'RADIO.STOP' | translate}}
+                        </a>
+                    </ion-item>
+                  </div>
+    </div>
+
+    </ion-content>
+</ion-view>

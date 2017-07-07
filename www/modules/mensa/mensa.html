@@ -1,0 +1,65 @@
+<ion-view view-title="{{'MENSA.TITLE' | translate}}"  >
+  <ion-content>
+      <!-- pull to refresh -->
+      <ion-refresher pulling-text="{{'MENSA.REFRESH' | translate}}" on-refresh="mensaRefresh()">
+      </ion-refresher>
+
+      <!-- connection error -->
+      <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+
+      <!-- subheader -->
+      <div class="item item-divider item-thumbnail-left" id="mensaHeader">
+          <img id="mensaThumb">
+          <b>{{'MENSA.SUBTITLE' | translate}}</b>
+          <p>{{'MENSA.ADRESS' | translate}}<br>
+            68161 Mannheim</p>
+          <button class="button button-dark" id="weekplanBtn" ng-click="openWeekview()">
+              {{'MENSA.WEEKLY' | translate}}
+          </button>
+      </div>
+
+      <!-- day navigation -->
+      <div class="item item-icon-left item-icon-right" style="text-align:center">
+        <i class="icon ion-ios-arrow-left" ng-click="prevDay()" style="color:{{arrowColor}}"></i>
+        {{days[i].date}}
+        <i class="icon ion-ios-arrow-right" ng-click="nextDay()" style="color:{{arrowColor}}"></i>
+      </div>
+
+      <!-- available menus of a day -->
+      <div class="item item-text-wrap" ng-repeat="menu in days[i].menus">
+          <h2 style="color: {{menu.color}}"><b>{{menu.title}}</b></h2>
+          <p ng-bind-html="menu.meal | allowHTML">{{menu.meal}}</p>
+          <div style="float:left; width: 150px"><b>{{menu.price}}</b></div><div><img ng-repeat="label in menu.labels track by $index" id="{{label.title}}"/></div>
+      </div>
+
+      <!-- additional information -->
+      <div class="item item-text-wrap">
+        <p>{{'MENSA.INFO' | translate}}</p>
+        <p>{{'MENSA.CTRLNO' | translate}}</p>
+      </div>
+
+      <!-- additives which require declaration -->
+      <div ng-repeat="item in items">
+          <!-- additives header -->
+          <div class="item item-divider" ng-click="toggleGroup(item)" ng-class="{active: isGroupShown(item)}">
+            <i class="icon" ng-class="isGroupShown(item) ? 'ion-minus' : 'ion-plus'"></i> {{'MENSA.DECL' | translate}}
+          </div>
+
+          <!-- all additives -->
+          <div class="item item-text-wrap item-accordion" ng-show="isGroupShown(item)">
+              <p><b>{{'MENSA.TITLE_ALLERGENES' | translate}}: </b><sup>[a]</sup>{{'MENSA.ALLERGENES.a' | translate}} <sup>[b]</sup>{{'MENSA.ALLERGENES.b' | translate}} <sup>[c]</sup>{{'MENSA.ALLERGENES.c' | translate}} <sup>[d]</sup>{{'MENSA.ALLERGENES.d' | translate}} <sup>[e]</sup>{{'MENSA.ALLERGENES.e' | translate}} <sup>[f]</sup>{{'MENSA.ALLERGENES.f' | translate}} <sup>[g]</sup>{{'MENSA.ALLERGENES.g' | translate}} <sup>[h]</sup>{{'MENSA.ALLERGENES.h' | translate}} <sup>[i]</sup>{{'MENSA.ALLERGENES.i' | translate}} <sup>[j]</sup>{{'MENSA.ALLERGENES.j' | translate}} <sup>[k]</sup>{{'MENSA.ALLERGENES.k' | translate}} <sup>[l]</sup>{{'MENSA.ALLERGENES.l' | translate}} <sup>[m]</sup>{{'MENSA.ALLERGENES.m' | translate}} <sup>[n]</sup>{{'MENSA.ALLERGENES.n' | translate}} <sup>[o]</sup>{{'MENSA.ALLERGENES.o' | translate}}</p>
+              <p><b>{{'MENSA.TITLE_ADDITIVES' | translate}}: </b><sup>[1]</sup>{{'MENSA.ADDITIVES.1' | translate}} <sup>[2]</sup>{{'MENSA.ADDITIVES.2' | translate}} <sup>[3]</sup>{{'MENSA.ADDITIVES.3' | translate}} <sup>[4]</sup>{{'MENSA.ADDITIVES.4' | translate}} <sup>[5]</sup>{{'MENSA.ADDITIVES.5' | translate}} <sup>[6]</sup>{{'MENSA.ADDITIVES.6' | translate}} <sup>[7]</sup>{{'MENSA.ADDITIVES.7' | translate}} <sup>[8]</sup>{{'MENSA.ADDITIVES.8' | translate}} <sup>[9]</sup>{{'MENSA.ADDITIVES.9' | translate}} <sup>[10]</sup>{{'MENSA.ADDITIVES.10' | translate}} <sup>[11]</sup>{{'MENSA.ADDITIVES.11' | translate}} <sup>[12]</sup>{{'MENSA.ADDITIVES.12' | translate}} <sup>[13]</sup>{{'MENSA.ADDITIVES.13' | translate}} <sup>[14]</sup>{{'MENSA.ADDITIVES.14' | translate}} <sup>[15]</sup>{{'MENSA.ADDITIVES.15' | translate}}</p>
+              <p><b>{{'MENSA.TITLE_LABELS' | translate}}: </b><sup>[G]</sup>{{'MENSA.LABELS.G' | translate}} <sup>[H]</sup>{{'MENSA.LABELS.H' | translate}} <sup>[L]</sup>{{'MENSA.LABELS.L' | translate}} <sup>[R]</sup>{{'MENSA.LABELS.R' | translate}} <sup>[S]</sup>{{'MENSA.LABELS.S' | translate}} <sup>[W]</sup>{{'MENSA.LABELS.W' | translate}}</p>
+              <p><img id="pork">{{'MENSA.PORK' | translate}}</img><img id="beef">{{'MENSA.BEEF' | translate}} </img><img id="venison">{{'MENSA.VENISON' | translate}} </img><img id="lamb">{{'MENSA.LAMB' | translate}} </img><img id="poultry">{{'MENSA.POULTRY' | translate}} </img><img id="fish">{{'MENSA.FISH' | translate}} </img><img id="seafood">{{'MENSA.SEAFOOD' | translate}} </img><img id="vegetarian">{{'MENSA.VEGETARIAN' | translate}} </img><img id="vegan">{{'MENSA.VEGAN' | translate}} </img><img id="homemade">{{'MENSA.HOMEMADE' | translate}} </img></p>
+          </div>
+      </div>
+
+      <!-- powered by -->
+      <a class="item item-avatar item-text-wrap" id="stw" ng-click="openSTW()">
+        <img id="stwIcon">
+        {{'TIMETABLE.DATA' | translate}}<br>
+        <b>Studierendenwerk Mannheim</b><br>
+        <em>{{'TIMETABLE.DATA2' | translate}}</em>
+      </a>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,71 @@
+<ion-view view-title="{{'PORTAL2.DETAILS' | translate}}">
+    <ion-content>
+        <div class="list card" ng-repeat="group in scheduleDetail">
+            <ion-item class="item-text-wrap item-icon-left">
+                <i class="icon ion-university"></i>
+                <b> {{'PORTAL2.GROUPNAME' | translate}}</b> <br>
+                {{group.groupname}} ({{group.type}})
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-left" ng-show="group.responsible">
+                <i class="icon ion-person"></i>
+                <b> {{'PORTAL2.RESPONSIBLE' | translate}}</b> <br>
+                {{group.responsible}}
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-left" ng-show="group.maxstudents">
+                <div class="row" style="padding:0px">
+                    <div class="col" style="margin:0px;padding:0px">
+                        <i class="icon ion-person-stalker"></i>
+                        <b> {{'PORTAL2.MAXSTUDENTS' | translate}}</b> <br>
+                        {{group.maxstudents}}
+                    </div>
+                    <div class="col" style="margin:0px;padding:0px">
+                        <i class="icon ion-person-stalker"></i>
+                        <b> {{'PORTAL2.MAXGUESTS' | translate}}</b> <br>
+                        {{group.maxguests}}
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-left" ng-show="group.sws">
+                <i class="icon ion-clock"></i>
+                <b> {{'PORTAL2.SWS' | translate}}</b> <br>
+                {{group.sws}}
+            </ion-item>
+            <ion-item style="padding:0px;margin:-2px">
+                <ion-list ng-repeat="series in group.dateseries">
+                    <ion-item class="item-text-wrap item-icon-left item-icon-right" ng-click="toggleGroup(series.seriesid)" ng-class="{active: isGroupShown(series.seriesid)}">
+                        <i class="icon ion-clock"></i>
+                        <b> {{'PORTAL2.DATESERIES' | translate}}</b> <br>
+                        {{series.startdate}} - {{series.enddate}}<br>
+                        {{series.starttime}} - {{series.endtime}}<br>
+                        {{series.instructor}}
+                        <i class="icon" ng-class="isGroupShown(series.seriesid) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+                    </ion-item>
+                    <ion-item style="padding:0px" ng-show="isGroupShown(series.seriesid)">
+                        <ion-list>
+                            <ion-item ng-repeat="date in series.dates">
+                                <div style="border-left:2px solid #003B53;padding-left:5px">
+                                    <b> {{date.executiondate}}</b>,  {{date.starttime}} - {{date.endtime}} <br>
+                                    {{date.building}}, {{date.room}}
+                                </div>
+                            </ion-item>
+                        </ion-list>
+                    </ion-item>
+                </ion-list>
+            </ion-item>
+            <ion-item style="padding:0px">
+                <a class="item item-text-wrap item-icon-left item-icon-right" ng-show="group.link_ilias" ng-href="{{group.link_ilias}}" onclick='window.open(this.href, "_system", "location=yes"); return false;'>
+                    <i class="icon ion-earth"></i>
+                    {{'PORTAL2.LINKILIAS' | translate}}
+                    <i class="icon ion-share" id="leaveIcon"></i>
+                </a>
+            </ion-item>
+            <ion-item style="padding:0px">
+                <a class="item item-text-wrap item-icon-left item-icon-right" ng-show="group.link_portal2" ng-href="{{group.link_portal2}}" onclick='window.open(this.href, "_system", "location=yes"); return false;'>
+                    <i class="icon ion-earth"></i>
+                    {{'PORTAL2.LINKPORTAL2' | translate}}
+                    <i class="icon ion-share" id="leaveIcon"></i>
+                </a>
+            </ion-item>
+        </div>
+    </ion-content>
+</ion-view>

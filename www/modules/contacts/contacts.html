@@ -1,0 +1,26 @@
+
+<ion-view view-title="{{'CONTACTS.TITLE' | translate}}" >
+  <ion-content ng-controller="contactsCtrl">
+    <ion-refresher pulling-text="{{'CONTACTS.REFRESH' | translate}}" on-refresh="contactsRefresh()">
+    </ion-refresher>
+    <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="search" placeholder="{{'CONTACTS.SEARCH' | translate}}" ng-model="search.last_name" ng-change="scrollTop()">
+      </label>
+      <button class="button button-clear" ng-click="clearSearch()">
+      {{'CONTACTS.CANCEL' | translate}}
+      </button>
+    </div>
+    <ion-list >
+      <div collection-repeat="item in contacts | filter : {last_name: search.last_name}">
+        <ion-item ng-href="#/app/contacts/{{item.title}}~{{item.last_name}}~{{item.first_name}}~{{item.faculty}}~{{item.department}}~{{item.address}}~{{item.phone_sec}}~{{item.office_hours}}~{{item.room}}~{{item.website}}" class="item item-icon-right">
+          <b> {{item.last_name}}</b>{{item.first_name}}
+          <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+        </ion-item>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
+

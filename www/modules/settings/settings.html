@@ -1,0 +1,37 @@
+<ion-view view-title="{{'SETTINGS.TITLE' | translate}}">
+	<ion-content>
+    <div class="list card">
+      <div class="item item-divider">
+        {{'SETTINGS.LANGDIVIDER' | translate}}
+      </div>
+      <ion-toggle ng-model="settings.language" ng-change="setSettings('language')" toggle-class="uni-blue-toggle">
+        {{'SETTINGS.LANGUAGE' | translate}}
+      </ion-toggle>
+<!--
+      <div class="item item-divider">
+        {{'SETTINGS.NOTDIVIDER' | translate}}
+      </div>
+      <ion-toggle ng-model="settings.pushNotifications" ng-change="setSettings('pushNotifications')" toggle-class="uni-blue-toggle">
+        {{'SETTINGS.PUSH' | translate}}
+      </ion-toggle>
+  
+      <div class="item item-divider">
+        {{'SETTINGS.PERSDIVIDER' | translate}}
+      </div>
+      <ion-toggle ng-model="settings.widget" ng-change="setSettings('widget')" toggle-class="uni-blue-toggle">
+        {{'SETTINGS.WIDGETS' | translate}}
+      </ion-toggle>
+  -->
+      <div class="item item-divider">
+        {{'SETTINGS.INTDIVIDER' | translate}}
+      </div>
+      <div class="list">
+        <a class="item item-icon-right" href="#/intro">
+          {{'SETTINGS.INTRO' | translate}}
+          <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+        </a>
+      </div>
+    </div>
+
+ </ion-content>
+</ion-view>

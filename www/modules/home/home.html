@@ -1,0 +1,148 @@
+<ion-view view-title="{{'HOME.TITLE' | translate}}" >
+    <!-- Button to open side menu -->
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content ng-controller="radioCtrl">
+        <!-- Pull to refresh -->
+        <ion-refresher pulling-text="{{'HOME.REFRESH' | translate}}" on-refresh="homeRefresh()">
+        </ion-refresher>
+
+        <!-- Connection Error -->
+        <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+
+      <!--
+              No Widgets, Standard-Home-View
+              <div ng-show="showstartCard1">
+              INFORM
+                <div id="homeDivBlue">
+                  <div id="homeDivTitle">{{'HOME.INFORM' | translate}}</div>
+                  <div ng-click="goto('app.news')" id="homeDivLeft">
+                      {{'MENU.NEWS' | translate}}
+                  </div>
+                  <div id="homeDivMiddle">|</div>
+                  <div ng-click="goto('app.events')" id="homeDivRight">
+                     {{'MENU.EVENTS' | translate}}
+                  </div>
+                </div>
+
+                LEARN
+                <div id="homeDivGrey">
+                  <div id="homeDivTitle">{{'HOME.LEARN' | translate}}</div>
+                  <div ng-click="goto('app.portal2')" id="homeDivLeft">
+                    {{'HOME.PORTAL2' | translate}}
+                  </div>
+                  <div id="homeDivMiddle">|</div>
+                  <div ng-click="goto('app.library')" id="homeDivRight">
+                    {{'MENU.LIBRARY' | translate}}
+                  </div>
+                </div>
+
+              EAT
+                <div ng-click="goto('app.mensa')" id="homeDivBlue">
+                  <div id="homeDivTitle">{{'HOME.EAT' | translate}}</div>
+                  <div ng-click="goto('app.mensa')" id="homeSubDiv">
+                    {{'HOME.MENSA' | translate}}
+                  </div>
+                </div>
+
+                MOVE
+                <div id="homeDivGrey">
+                  <div id="homeDivTitle">{{'HOME.MOVE' | translate}}</div>
+                  <div ng-click="goto('app.map')" id="homeDivLeft">
+                    {{'MENU.MAP' | translate}}
+                  </div>
+                  <div id="homeDivMiddle">|</div>
+                  <div ng-click="goto('app.timetable')" id="homeDivRight">
+                    {{'MENU.TIMETABLE' | translate}}
+                  </div>
+                </div>
+
+            ENGAGE
+                <div id="homeDivBlue">
+                  <div id="homeDivTitle">{{'HOME.ENGAGE' | translate}}</div>
+                  <div ng-click="goto('app.organizations')" id="homeDivLeft">
+                    {{'MENU.ORGANIZATIONS' | translate}}
+                  </div>
+                  <div id="homeDivMiddle">|</div>
+                  <div ng-click="goto('app.contacts')" id="homeDivRight">
+                    {{'MENU.CONTACTS' | translate}}
+                  </div>
+                </div>
+
+             LISTEN
+                <div id="homeDivGrey" ng-click="goto('app.radio')">
+                    <div id="homeDivTitle">{{'HOME.LISTEN' | translate}}</div>
+                    <div ng-click="goto('app.radio')" id="homeSubDiv">
+                      Radioaktiv
+                    </div>
+                </div>
+              </div>
+      -->
+
+        <!-- Push Notification Card -->
+        <div class="card" ng-controller="notiCtrl" ng-show="showNotification" ng-click="click()" >
+            <ion-item class="item-divider">
+                <b> New Notification</b>
+            </ion-item>
+            <ion-item>
+                <b> {{lastNotification}}</b>
+
+            </ion-item>
+         </div>
+
+        <!-- Latest News Card-->
+        <div class="card">
+            <ion-item class="item-divider item-icon-left">
+                <i class="icon ion-speakerphone"></i>
+                <b>{{'HOME.NEWS' | translate}}</b>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" ng-repeat="item in lNews| limitTo: 2" href="#/app/news/:{{item.id}}" >
+               <h2 ng-bind-html="item.title"></h2>
+                <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+            </ion-item>
+        </div>
+
+        <!-- Next Events Card-->
+        <div class="card">
+            <ion-item class="item-divider item-icon-left">
+                <i class="icon ion-calendar"></i>
+                <b>{{'HOME.EVENTS' | translate}}</b>
+            </ion-item>
+            <ion-item class="item-text-wrap item-icon-right" ng-repeat="event in cEvents | limitTo: 2" ng-href="#/app/events/:{{event.id}}" >
+                <p>{{event.pubdate}}</p>
+                <h2>{{event.title}}</h2>
+                <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+            </ion-item>
+        </div>
+
+        <!-- Radioaktiv  Card-->
+        <div class="card">
+            <ion-item class="item-divider item-icon-left" >
+                <i class="icon ion-radio-waves"></i>
+                <b>Radio</b>
+            </ion-item>
+            <ion-item class="item-thumbnail-left" id="homeRadioCard">
+                <img id="radioThumb">
+                <b>radioaktiv - Campusradio Rhein-Neckar</b>
+                <h2>Mannheim, Ludwigshafen, Heidelberg</h2>
+                <h2>{{'HOME.RADIO.PLAYING' | translate}}: {{item}}</h2>
+            </ion-item>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="playWebAudio()" ></a>
+                <ion-item class="tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item"  ng-click="playWebAudio()" ng-disabled="isDisabled" ng-model="isDisabled">
+                    <i class="icon ion-ios-play"></i>
+                    {{'HOME.RADIO.PLAY' | translate}}
+                    </a>
+                    <a class="tab-item"  ng-click="stopWeb()">
+                    <i class="icon ion-android-checkbox-blank"></i>
+                    {{'HOME.RADIO.STOP' | translate}}
+                    </a>
+                </ion-item>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

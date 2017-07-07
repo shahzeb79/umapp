@@ -1,0 +1,22 @@
+<ion-view view-title="{{'ORGANIZATIONS.TITLE' | translate}}">
+    <ion-content ng-controller="organizationsCtrl">
+        <ion-refresher pulling-text="{{'ORGANIZATIONS.REFRESH' | translate}}" on-refresh="getOrganizations()">
+        </ion-refresher>
+        <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="{{'ORGANIZATIONS.SEARCH' | translate}}" ng-model="search.name" ng-change="scrollTop()">
+            </label>
+            <button class="button button-clear" ng-click="clearSearch()">
+                {{'ORGANIZATIONS.CANCEL' | translate}}
+            </button>
+        </div>
+        <ion-list>
+            <ion-item collection-repeat="organization in organizations | filter : {name: search.name}" ng-href="#/app/organizations/:{{organization.id}}" class="item item-icon-right">
+                {{organization.name}}
+                <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

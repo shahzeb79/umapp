@@ -1,0 +1,70 @@
+<ion-view view-title="{{'PORTAL2.TITLE' | translate}}">
+    <script >
+        setTimeout(function() {
+          $('#hide1').fadeOut( 1600, "linear", function() {
+            // Animation complete.
+          });
+        }, 8000);
+        setTimeout(function() {
+          $('#hide').fadeOut( 1600, "linear", function() {
+            // Animation complete.
+          });
+        }, 3000);
+    </script>
+    <ion-nav-bar class="bar-positive uni-blue">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left" id="nav">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-clear" ng-click="toggle()">
+                <i class="icon ion-funnel" ng-class="(filters.length === 0 || filters == '') ? 'uni-grey-color' : 'uni-green-math-color'"></i>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-refresher pulling-text="{{'GENERAL.REFRESH' | translate}}" on-refresh="portal2Refresh(date)">
+        </ion-refresher>
+        <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+        <ion-list ng-if="showPortal2Filter">
+            <ion-item class="item item-divider">
+                {{'PORTAL2.FILTER' | translate}}
+            </ion-item>
+            <ion-item ng-show="filters == ''">
+                <h3>{{'PORTAL2.NOFILTER' | translate}}</h3>
+            </ion-item>
+            <ion-item ng-repeat="filter in filters" class="item item-icon-right item-text-wrap">
+                <h3>{{filter}}</h3>
+                <i class="icon ion-close-round" id="leaveIcon" ng-click="portal2Filter(filter)"></i>
+            </ion-item>
+        </ion-list>
+
+        <div class="item item-icon-left item-icon-right" style="text-align:center">
+            <i class="icon ion-ios-arrow-left" ng-click="getDate('back')" style="color:{{arrowColor}}"></i>
+            {{date}}
+            <i class="icon ion-ios-arrow-right" ng-click="getDate('forward')" style="color:{{arrowColor}}"></i>
+        </div>
+
+        <ion-list ng-repeat="groups in schedule | filter : filterGroups">
+
+            <ion-item class="item item-divider item-icon-right" ng-click="toggleGroup(groups[0].start)" ng-class="{active: isGroupShown(groups[0].start)}">
+                <b>{{groups[0].start}}</b>
+                <i class="icon" ng-class="isGroupShown(groups[0].start) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+            </ion-item>
+
+            <ion-list ng-if="isGroupShown(groups[0].start)">
+                <ion-item ng-repeat="lecture in groups | filter : filterLecture" class="item item-icon-right item-text-wrap" ng-class="showPortal2Filter ? 'item-icon-left' : ''" style="margin:-2px;">
+                    <i class="icon" ng-click="portal2Filter(lecture.eventname)" ng-class="isToggle(lecture.eventname) ? 'ion-android-favorite' : 'ion-android-favorite-outline'" ng-if="showPortal2Filter"></i>
+                    <div style="border-left:2px solid #003B53;padding-left:5px" ng-click="showPortal2Detail(lecture.eventid)">
+                        <h3>{{lecture.eventname}}<span style="font-weight:normal"> ({{lecture.type}})</span></h3>
+                        <p>
+                            {{lecture.start}} - {{lecture.end}} &mdash; {{lecture.building}}, {{lecture.room}}
+                        </p>
+                        <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="{{'INFORMATION.TITLE' | translate}}">
+  <ion-content>
+
+    <div class="list card">
+        <a class="item item-icon-left item-icon-right" ng-click="openInfo()">
+          <i class="icon ion-document-text"></i>
+          {{'INFORMATION.LEGAL' | translate}}
+          <i class="icon ion-share" id="leaveIcon"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right" ng-click="openLicenses()">
+          <i class="icon ion-key"></i>
+          {{'INFORMATION.LICENSE' | translate}}
+          <i class="icon ion-share" id="leaveIcon"></i>
+        </a>
+        <a class="item item-icon-left item-icon-right item-sponsor" href="http://www.uni-mannheim.de/freunde" onclick="window.open(this.href,'_system','resizable=yes','location=yes'); return false;">
+          {{'INFORMATION.SPONSOR' | translate}}
+          <img id="friends" class="item"/>
+        </a>
+      </div>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+

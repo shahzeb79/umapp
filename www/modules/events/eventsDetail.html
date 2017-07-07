@@ -1,0 +1,29 @@
+<ion-view view-title="{{'EVENTS.TITLE' | translate}}">
+  <ion-content>
+    <!-- details card -->
+    <div class="list card">
+      <!-- card header -->
+      <div class="item item-text-wrap">
+        <b>{{event.title}}</b>
+        <p>{{event.pubdatetime}} {{'EVENTS.TIME' | translate}} <br>
+        {{event.location}}</p>
+      </div>
+      <!-- event description -->
+      <div class="item item-body">
+        {{event.description}}
+      </div>
+      <!-- button to open details in browser -->
+      <a class="item item-icon-left item-icon-right" ng-href="{{event.link}}" onclick='window.open(this.href, "_system", "location=yes"); return false;'>
+        <i class="icon ion-earth"></i>
+        {{'EVENTS.LINK' | translate}}
+        <i class="icon ion-share" id="leaveIcon"></i>
+      </a>
+      <!-- button to creat event in local calendar -->
+      <a class="item item-icon-left item-icon-right" ng-click="createEvent()">
+        <i class="icon ion-plus-round"></i>
+        {{'EVENTS.ADD' | translate}}
+        <i class="icon ion-share" id="leaveIcon"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

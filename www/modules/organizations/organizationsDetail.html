@@ -1,0 +1,27 @@
+<ion-view view-title="{{'ORGANIZATIONS.TITLE' | translate}}">
+  <ion-content>
+
+    <div class="list card">
+      <CENTER>
+        <div class ="item-divider item-text-wrap">
+          <b>{{organization.name}}</b>
+        </div>
+
+        <div class="item item-body">
+          <br>
+          <img ng-src="{{img}}" width="200px">
+          <br>
+           <p align="justify">{{organization.text}}</p>
+          <br>
+
+          <button class="button button-positive uni-blue" ng-click="openWebsite(organization.website)" ng-show="isAvailable(organization.website)"> Website </button>
+          <button class="button button-positive uni-blue" ng-click="openFacebook(organization.facebook)" ng-show="isAvailable(organization.facebook)"> Facebook </button>
+          <br>
+        </div>
+      </CENTER>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+

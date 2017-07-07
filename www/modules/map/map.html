@@ -1,0 +1,34 @@
+<ion-view view-title="{{'MAP.TITLE' | translate}}">
+   <ion-content ng-controller="mapsearchCtrl">
+      <ion-refresher pulling-text="{{'MAP.REFRESH' | translate}}" on-refresh="mapRefresh()">
+      </ion-refresher>
+      <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+      <div class="bar bar-header item-input-inset">
+         <label class="item-input-wrapper">
+         <i class="icon ion-ios-search placeholder-icon"></i>
+         <input type="search" placeholder="{{'MAP.SEARCH' | translate}}" ng-model="search.full_number" ng-change="scrollTop()">
+         </label>
+         <button class="button button-clear" ng-click="clearSearch()">
+         {{'MAP.CANCEL' | translate}}
+         </button>
+      </div>
+      <label class="item">
+         <div class="input-label">
+            {{'MAP.MODE' | translate}}
+         </div>
+         <select id="mode" style="width:100%" >
+            <option value="WALKING">{{'MAP.WALKING' | translate}}</option>
+            <option value="DRIVING">{{'MAP.DRIVING' | translate}}</option>
+             <option value="BICYCLING">{{'MAP.BICYCLING' | translate}}</option>
+            <option value="TRANSIT">{{'MAP.TRANSIT' | translate}}</option>
+         </select>
+      </label>
+      <ion-list>
+         <div collection-repeat="item in getmap | filter : {full_number: search.full_number }">
+            <ion-item ng-href="#/app/map/{{item.name}}~{{item.room_number}}~{{item.floor}}~{{item.room_name}}~{{item.category}}~{{item.latitude}}~{{item.longitude}}" class="subdued">
+               {{item.full_number}} {{item.category}} <b>- {{item.name}}</b> <i ng-show="item.room_name != ''"> {{item.room_name}}</i>
+            </ion-item>
+         </div>
+      </ion-list>
+   </ion-content>
+</ion-view>

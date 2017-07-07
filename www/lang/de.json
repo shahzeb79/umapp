@@ -1,0 +1,279 @@
+{
+  "MENU" : {
+    "LOGO" : "menuLogoDE",
+    "TITLE" : "Universität Mannheim",
+    "HOME" : "Startseite",
+    "NEWS" : "Neuigkeiten",
+    "EVENTS" : "Veranstaltungen",
+    "MENSA" : "Mensa",
+    "MAP" : "Campusplan",
+    "TIMETABLE" : "Öffentlicher Nahverkehr",
+    "CONTACTS" : "Kontakte Universität",
+	  "LIBRARY" : "Bibliothek",
+    "SPORT" : "Sport",
+    "RADIOACTIVE" : "Radioaktiv",
+    "SETTINGS" : "Einstellungen",
+    "FEEDBACK" : "Feedback",
+    "INFORMATION" : "Informationen",
+    "NOTIFICATIONS" : "Benachrichtigungen",
+    "ORGANIZATIONS" : "Studentische Initiativen",
+    "PORTAL2" : "Portal2 Vorlesungen"
+  },
+  "HOME" :{
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "TITLE" : "Startseite",
+    "NEWS" : "Aktuelle Nachrichten",
+    "EVENTS" : "Aktuelle Veranstaltungen",
+    "RADIO" : {
+      "PLAY": "Start",
+      "STOP": "Stopp",
+      "PLAYING" :"Aktuell läuft"
+    },
+    "INFORM" : "ERZÄHLEN",
+    "LEARN" : "LERNEN",
+    "PORTAL2" : "Vorlesungen",
+    "EAT" : "ESSEN",
+    "MENSA" : "Mensa Menü",
+    "MOVE" : "BEWEGEN",
+    "ENGAGE" : "HELFEN",
+    "LISTEN" : "HÖREN"
+  },
+  "NEWS" : {
+    "TITLE" : "Neuigkeiten",
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "LINK" : "Artikel im Browser aufrufen",
+    "MORE" : "mehr lesen",
+    "TIME" : "Uhr",
+    "FILTER" : "Kategorien filtern"
+  },
+  "EVENTS" :{
+    "TITLE" : "Veranstaltungen",
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "LINK" : "Weitere Informationen",
+    "ADD" : "Zum Kalender hinzufügen",
+    "TIME" : "Uhr"
+  },
+  "FEEDBACK" : {
+    "TITLE" : "Feedback",
+    "ABOUT" : "Dein Feedback an uns",
+    "NAME" : "Name",
+    "OPTIONAL" : "Deine Mailadresse (optional)",
+    "MAIL" : "Wenn du möchtest, antworten wir dir gerne:",
+    "THANKYOU" : "Vielen Dank, dass du dir die Zeit nimmst, Feedback zu geben. Wir freuen uns über jede Rückmeldung :)",
+    "PLEASE" : "Bitte fülle die Umfrage aus und schicke deine Antworten ab.",
+    "ANSWER" : "Gib deine Antwort ein",
+    "SAVE" : "Feedback absenden",
+    "POPUP_SUCCESS" : {
+      "TITLE" : "Feedback gespeichert!",
+      "TEMPLATE" : "Dein Feedback wurde erfolgreich gespeichert!"
+    },
+    "POPUP_ERROR" : {
+      "TITLE" : "Feedback konnte nicht gespeichert werden!",
+      "TEMPLATE" : "Bitte beantworte mindestens eine Frage!"
+    }
+  },
+  "TIMETABLE" : {
+    "TITLE" : "Öffentlicher Nahverkehr",
+    "CHOICE": "Haltestelle wählen",
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "TRAINLINES" : "Bahn-Linien",
+    "BUSLINES" : "Bus-Linien",
+    "DEPARTURE" : "Abfahrtszeiten ab ",
+    "TIME" : "Uhr",
+    "DATA" : "Daten bereitgestellt von",
+    "DATA2" : "(Angaben ohne Gewähr)"
+  },
+  "CONTACTS" : {
+    "TITLE" : "Kontakte Universität",
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "SEARCH" : "Kontakte suchen...",
+    "CANCEL" : "Abbrechen",
+    "DEPARTMENT" : "Fachbereich",
+    "FACULTY" : "Fakultät",
+    "ADDRESS" : "Adresse",
+    "ROOM" : "Raum",
+    "PHONE" : "Telefonnummer",
+    "OFFICEHOURS" : "Öffnungszeiten"
+
+  },
+  "LIBRARY" : {
+    "TITLE" : "Bibliothek",
+    "SUBTITLE" : "Universitätsbibliothek",
+    "SITE" : "Webseite",
+    "PRIMO" : "Online-Katalog",
+    "TIME" : "Öffnungszeiten"
+  },
+  "RADIO" :{
+    "PLAY": "Start",
+    "STOP": "Stopp",
+    "PLAYING" :"Aktuell läuft"
+  },
+  "MAP" : {
+    "TITLE" : "Campusplan",
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "SEARCH" : "Orte suchen...",
+    "CANCEL" : "Abbrechen",
+    "MODE" : "Fortbewegung",
+    "WALKING" : "Zu Fuß",
+    "DRIVING" : "Auto",
+    "BICYCLING" : "Fahrrad",
+    "TRANSIT" : "Öffentliche Verkehrsmittel",
+    "ROOM" : "Raum",
+    "FLOOR" : "Etage",
+    "SHOWMAP" : "Karte anzeigen"
+  },
+  "MENSA" : {
+    "TITLE": "Mensa",
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "SUBTITLE": "Mensa am Schloss",
+    "ADRESS": "Bismarckstr. 10 | Eingang A",
+    "WEEKLY": "Wochenansicht",
+    "INFO": "Alle Menüs inkl. Tagessuppe. Preise sind Kartenpreise für Studierende. Bedienstete + 25%, Gäste + 60% | bar + 25%. Alle Angaben gemäß Produktspezifikation der Hersteller. Kreuzkontaminationen im laufenden Küchenbetrieb sind nicht auszuschließen.",
+    "CTRLNO": "Änderungen vorbehalten! - Bio-Kontrollnummer: DE-ÖKO-007",
+    "DECL": "Kennzeichnungspflichtige Zusatzstoffe",
+    "TITLE_ALLERGENES": "ALLERGENE",
+    "TITLE_ADDITIVES": "ZUSATZSTOFFE",
+    "TITLE_LABELS": "KENNZEICHNUNGEN",
+    "ALLERGENES": {
+      "a" : "Lupinen",
+      "b" : "Schalen/Krustentiere",
+      "c" : "Schwefeldioxid Sulfit",
+      "d" : "Sellerie",
+      "e" : "Weizen",
+      "f" : "Gluten",
+      "g" : "Milch",
+      "h" : "Nüsse",
+      "i" : "Senf",
+      "j" : "Soja",
+      "k" : "Sesam",
+      "l" : "Ei",
+      "m" : "Erdnüsse",
+      "n" : "Fisch",
+      "o" : "Laktose"
+    },
+    "ADDITIVES": {
+      "1" : "mit Farbstoff",
+      "2" : "mit Konservierungsstoff",
+      "3" : "mit Antioxidationsmittel",
+      "4" : "mit Geschmacksverstärker",
+      "5" : "geschwefelt",
+      "6" : "geschwärzt",
+      "7" : "gewachst",
+      "8" : "mit Phosphat",
+      "9" : "mit Säuerungsmittel",
+      "10" : "enthält eine Phenylalaninquelle",
+      "11" : "Taurin",
+      "12" : "mit Süßungsmittel",
+      "13" : "enthält Natriumnitrit",
+      "14" : "kakaohaltige Fettglasur",
+      "15" : "koffeinhaltig"
+    },
+    "LABELS": {
+      "G" : "Geflügel",
+      "H" : "Hausgemacht",
+      "L" : "Lamm",
+      "R" : "Rind",
+      "S" : "Schwein",
+      "W" : "Wild"
+    },
+    "PORK" : "Schwein",
+    "BEEF" : "Rind",
+    "VENISON" : "Wild",
+    "LAMB" : "Lamm",
+    "POULTRY" : "Geflügel",
+    "FISH" : "Fisch",
+    "SEAFOOD" : "Meeresfrüchte",
+    "VEGETARIAN" : "Vegetarisch",
+    "VEGAN" : "Vegan",
+    "HOMEMADE" : "Hausgemacht"
+  },
+  "INFORMATION" : {
+    "TITLE": "Informationen",
+    "LEGAL": "Impressum",
+    "LICENSE": "Open-Source-Lizenzen",
+    "FRIENDS": "Freunde",
+    "SPONSOR": "unterstützt von"
+  },
+
+  "NOTIFICATIONS" : {
+    "TITLE" : "Benachrichtigungen",
+    "LAST" : "Letzte Benachrichtigung",
+    "PREVIOUS" :"Vorherige Benachrichtigung",
+    "PUSH"  : "Push-Benachrichtigungen",
+    "CALL" : "Notruf",
+    "LOCATE" : "Finde mich",
+    "HIDE" : "Karte ausblenden"
+    },
+
+  "SETTINGS"   : {
+    "TITLE" : "Einstellungen",
+    "NOTDIVIDER" : "Benachrichtigungen",
+    "PUSH" : "Push-Nachrichten erlauben",
+    "LANGDIVIDER" : "Sprache",
+    "LANGUAGE" : "Aktuelle Sprache: Deutsch",
+    "PERSDIVIDER" : "Personalisierung",
+    "WIDGETS" : "Home: Widget-Style aktivieren",
+    "INTDIVIDER" : "Einführung",
+    "INTRO" : "Einführung erneut anzeigen"
+  },
+  "ORGANIZATIONS" : {
+    "TITLE" : "Studentische Initiativen",
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "CANCEL" : "Abbrechen",
+    "SEARCH" : "Initiativen suchen..."
+
+  },
+  "INTRO" : {
+    "TITLE" : "Einführung",
+    "SKIP" : "Überspringen",
+    "PREVIOUS" : "Zurück",
+    "NEXT" : "Weiter",
+    "FINAL" : "Und jetzt: Probier alles aus, wir wünschen viel Spaß!",
+    "START" : "Gehe zur App",
+    "DONE" : "Fertig",
+    "SLIDE1" : {
+      "TITLE" : "HERZLICH WILLKOMMEN",
+      "DESC" : "...zur offiziellen App der Uni Mannheim. Hier kommen ein paar Tipps für die erste Nutzung.",
+      "LOGO" : "img/08_UM_SIGNET_DE_Weiss-01.png"
+    },
+    "SLIDE2" : {
+      "TITLE" : "AUF EINEN BLICK",
+      "DESC" : "...findest du alle Highlights der App auf dem neuen Homescreen.",
+      "IMG" : "img/Screenshot_homescreen_de.jpg"
+    },
+    "SLIDE3" : {
+      "TITLE" : "WAS IST NEU?",
+      "DESC" : "... das und vieles mehr. Schau es dir an!"
+    },
+    "SLIDE4" : {
+      "TITLE" : "FREUT EUCH AUF",
+      "DESC" : "...die neue Portal²-Funktion mit persönlichem Studenplan!",
+      "IMG" : "img/Screenshot_portal2_de.jpg"
+    },
+    "SLIDE5" : {
+      "TITLE" : "FEEDBACK ERWÜNSCHT",
+      "DESC" : "...denn nur dann können wir die App noch weiter für dich verbessern."
+    }
+  },
+  "PORTAL2" : {
+    "TITLE" : "Portal2 Vorlesungen",
+    "RESPONSIBLE" : "Dozent",
+    "GROUPNAME" : "Gruppe",
+    "MAXSTUDENTS" : "Max. Studenten",
+    "MAXGUESTS" : "Max. Gäste",
+    "SWS" : "Stunden pro Woche",
+    "LINKILIAS" : "Öffne Vorlesung in Ilias",
+    "LINKPORTAL2" : "Öffne Vorlesung in Portal2",
+    "DATESERIES" : "Serie",
+    "DETAILS" : "Details",
+    "ADD" : "Zum Kalender hinzufügen",
+    "FILTER" : "Gefilterte Vorlesungen",
+    "NOFILTER" : "Noch keine Vorlesung gefiltert."
+  },
+  "GENERAL" : {
+    "REFRESH" : "Ziehen um zu aktualisieren",
+    "SEARCH" : "Suchen...",
+    "CANCEL" : "Abbrechen",
+    "ERROR" : "Fehler: Keine Internetverbindung!"
+  }
+}

@@ -1,0 +1,29 @@
+<ion-view view-title="{{'EVENTS.TITLE' | translate}}">
+  <ion-content>
+    <!-- Pull to refresh -->
+    <ion-refresher pulling-text="{{'EVENTS.REFRESH' | translate}}" on-refresh="eventsRefresh()">
+    </ion-refresher>
+
+    <!-- Connection Error -->
+    <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+
+    <!-- Events overivew -->
+    <div ng-repeat="month in months">
+
+      <!-- Month separation -->
+      <div class="item item-icon-right" ng-click="toggleMonth(month.name)" ng-class="{active: isMonthShown(month.name)}">
+        <b>{{month.name}}</b>
+        <i class="icon" ng-class="isMonthShown(month.name) ? 'ion-chevron-up' : 'ion-chevron-down'" id="leaveIcon"></i>
+      </div>
+
+      <!-- Events per month -->
+      <ion-list ng-repeat="event in month.events" ng-show="isMonthShown(month.name)">
+        <a class="item item-accordion item-icon-left item-text-wrap item-icon-right" ng-href="#/app/events/:{{event.id}}" id="mainnews" style="margin:-2px">
+          <i class="icon icon-calendar{{event.day}}"></i>
+          <h2>{{event.title}}</h2>
+          <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+        </a>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

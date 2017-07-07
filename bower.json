@@ -1,0 +1,16 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.3.0",
+    "ionic-platform-web-client": "^0.7.1",
+    "ionic-service-core": "^0.1.10",
+    "ionic-service-push": "^0.1.13",
+    "angular-websocket": "^1.1.0",
+    "ngCordova": "^0.1.24-alpha"
+  },
+  "dependencies": {
+    "ngCordova": "^0.1.24-alpha",
+    "ion-sticky": "^1.0.4"
+  }
+}

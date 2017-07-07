@@ -1,0 +1,47 @@
+<ion-view cache-view="false" view-title="{{'NEWS.TITLE' | translate}}">
+    <ion-nav-bar class="bar-positive uni-blue">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+        <ion-nav-buttons side="left" id="nav">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-clear" ng-click="toggle()">
+                <i class="icon ion-funnel" ng-class="compare(nfilters, nfiltersAll) ? 'uni-grey-color' : 'uni-green-math-color'"></i>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content>
+        <ion-refresher pulling-text="{{'NEWS.REFRESH' | translate}}" on-refresh="newsRefresh()">
+        </ion-refresher>
+        <div id="hide1" ng-if="showError" style="display:block"></div>
+
+        <ion-list ng-show="showFilter">
+            <ion-item class="item item-divider">
+                {{'NEWS.FILTER' | translate}}
+            </ion-item>
+            <ion-toggle ng-repeat="filter in nfiltersAll" ng-model="newsFilterToggle" ng-click="newsFilter(filter)" toggle-class="uni-blue-toggle" ng-checked="isToggle(filter)">
+                {{filter}}
+            </ion-toggle>
+        </ion-list>
+
+        <div class="list card" ng-repeat="item in news | filter : filterNews" ng-click="showNewsDetail(item.id)">
+            <div class="item item-text-wrap">
+                <b ng-bind-html="item.title"></b>
+                <p>{{item.pubdate}}</p>
+            </div>
+            <div class="item item-body">
+                <span ng-bind-html="item.description">
+                </span>
+                <a ng-href="#/app/news/:{{item.id}}" class="subdued"><b>{{'NEWS.MORE' | translate}}</b></a>
+                <p>
+                 <span class="uni-badge uni-grey subdued" >{{item.category}}</span>
+                </p>
+            </div>
+        </div>
+        <ion-infinite-scroll
+            on-infinite="newsExtend()"
+            distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

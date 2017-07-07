@@ -1,0 +1,277 @@
+{
+  "MENU" : {
+    "LOGO" : "menuLogoEN",
+    "TITLE" : "University of Mannheim",
+    "HOME" : "Home",
+    "NEWS" : "News",
+    "EVENTS" : "Events",
+    "MENSA" : "Mensa",
+    "MAP" : "Campus Map",
+    "TIMETABLE" : "Public Transport",
+    "CONTACTS" : "University Contacts",
+    "LIBRARY" : "Library",
+    "SPORT" : "Sports (German only)",
+    "RADIOACTIVE" : "Radioaktiv",
+    "SETTINGS" : "Settings",
+    "FEEDBACK" : "Feedback",
+    "INFORMATION" : "Information",
+    "NOTIFICATIONS" : "Notifications",
+    "ORGANIZATIONS" : "Student Organizations",
+    "PORTAL2" : "Portal2 Lectures"
+  },
+  "HOME" :{
+    "REFRESH" : "Pull to refresh",
+    "TITLE" : "Home",
+    "NEWS" : "Latest News",
+    "EVENTS" : "Next Events",
+    "RADIO" : {
+      "PLAY": "Play",
+      "STOP": "Stop",
+      "PLAYING" :"Current Playing"
+    },
+    "INFORM" : "INFORM",
+    "LEARN" : "LEARN",
+    "PORTAL2" : "Lectures",
+    "EAT" : "EAT",
+    "MENSA" : "Mensa Menu",
+    "MOVE" : "MOVE",
+    "ENGAGE" : "ENGAGE",
+    "LISTEN" : "LISTEN"
+  },
+  "NEWS" : {
+    "TITLE" : "News",
+    "REFRESH" : "Pull to refresh",
+    "LINK" : "Open article in browser",
+    "MORE" : "read more",
+    "TIME" : "h",
+    "FILTER" : "Filter categories"
+  },
+  "EVENTS" :{
+    "TITLE" : "Events",
+    "REFRESH" : "Pull to refresh",
+    "LINK" : "More Information",
+    "ADD" : "Add to calendar",
+    "TIME" : "h"
+  },
+  "FEEDBACK" : {
+    "TITLE" : "Feedback",
+    "ABOUT" : "Your Feedback for us",
+    "NAME" : "name",
+    "OPTIONAL" : "Your mailaddress (optional)",
+    "MAIL" : "If you want to, we will answer to your feedback:",
+    "THANKYOU" : "Thank you for taking the time to provide feedback on the current app! We appreciate it :)",
+    "PLEASE" : "Please fill out the survey below and send us your feedback.",
+    "ANSWER" : "Type in your answer",
+    "SAVE" : "Send Feedback",
+    "POPUP_SUCCESS" : {
+      "TITLE" : "Feedback saved!",
+      "TEMPLATE" : "Your feedback was saved successfully!"
+    },
+    "POPUP_ERROR" : {
+      "TITLE" : "Could not send Feedback!",
+      "TEMPLATE" : "Please answer at least one question!"
+    }
+  },
+  "CONTACTS" : {
+    "TITLE" : "University Contacts",
+    "REFRESH": "Pull to refresh",
+    "SEARCH" : "Search contacts...",
+    "CANCEL" : "Cancel",
+    "DEPARTMENT" : "Department",
+    "FACULTY" : "Faculty",
+    "ADDRESS" : "Address",
+    "ROOM" : "Room",
+    "PHONE" : "Phone number",
+    "OFFICEHOURS" : "Office hours"
+  },
+  "TIMETABLE" : {
+    "TITLE" : "Public Transport",
+    "CHOICE" : "Choose a station",
+    "REFRESH": "Pull to refresh",
+    "TRAINLINES" : "Tram lines",
+    "BUSLINES" : "Bus lines",
+    "DEPARTURE" : "Departures at ",
+    "TIME" : "h",
+    "DATA" : "Data provided by",
+    "DATA2" : "(Subject to change)"
+  },
+  "LIBRARY" :{
+    "TITLE" : "Library",
+    "SUBTITLE" : "University Library",
+    "SITE" : "Website",
+    "PRIMO" : "Online Catalog",
+    "TIME" : "Opening Hours"
+  },
+  "RADIO" : {
+    "PLAY": "Play",
+    "STOP": "Stop",
+    "PLAYING" :"Current playing"
+  },
+  "MAP" : {
+    "TITLE" : "Campus Map",
+    "REFRESH" : "Pull to refresh",
+    "SEARCH" : "Search places...",
+    "CANCEL" : "Cancel",
+    "MODE" : "Mode",
+    "WALKING" : "Walking",
+    "DRIVING" : "Driving",
+    "BICYCLING" : "Bicycling",
+    "TRANSIT" : "Transit",
+    "ROOM" : "Room",
+    "FLOOR" : "Floor",
+    "SHOWMAP" : "Show map"
+  },
+  "MENSA" : {
+    "TITLE" : "Mensa",
+    "REFRESH" : "Pull to refresh",
+    "SUBTITLE" : "Mensa am Schloss",
+    "ADRESS": "Bismarckstr. 10 | Entrace A",
+    "WEEKLY" : "Weekview",
+    "INFO" : "All menus include a Soup of the Day. Prices indicated are prices for students paying with their student card. Employees + 25%, guests + 60% | Payment in cash + 25%. All information according to product specification of the manufacturer. Cross-contamination in the cooking process cannot be ruled out.",
+    "CTRLNO" : "Subject to change! - Code of Organic Farming Control Authority: DE-ÖKO-007",
+    "DECL" : "Additives which require declaration",
+    "TITLE_ALLERGENES" : "ALLERGENS",
+    "TITLE_ADDITIVES" : "ADDITIVES",
+    "TITLE_LABELS" : "LABELLING KEY",
+    "ALLERGENES" : {
+      "a" : "lupins",
+      "b" : "shellfish",
+      "c" : "sulphur dioxide sulfite",
+      "d" : "celery",
+      "e" : "wheat",
+      "f" : "gluten",
+      "g" : "milk",
+      "h" : "nuts",
+      "i" : "mustard",
+      "j" : "soy",
+      "k" : "sesame",
+      "l" : "eggs",
+      "m" : "peanuts",
+      "n" : "fish",
+      "o" : "lactose"
+    },
+    "ADDITIVES": {
+      "1" : "contains food coloring",
+      "2" : "contains preservatives",
+      "3" : "contains food antioxidants",
+      "4" : "contains flavor enhancers",
+      "5" : "sulfurated",
+      "6" : "blackened",
+      "7" : "wax-coated",
+      "8" : "contains phosphates",
+      "9" : "contains acids",
+      "10" : "contains phenylalanine",
+      "11" : "taurine",
+      "12" : "contains sweeteners",
+      "13" : "contains sodium nitrite",
+      "14" : "chocolate glaze",
+      "15" : "contains caffeine"
+    },
+    "LABELS": {
+      "G" : "poultry",
+      "H" : "homemade",
+      "L" : "lamb",
+      "R" : "beef",
+      "S" : "pork",
+      "W" : "venison"
+    },
+    "PORK" : "pork",
+    "BEEF" : "beef",
+    "VENISON" : "venison",
+    "LAMB" : "lamb",
+    "POULTRY" : "poultry",
+    "FISH" : "fish",
+    "SEAFOOD" : "seafood",
+    "VEGETARIAN" : "vegetarian",
+    "VEGAN" : "vegan",
+    "HOMEMADE" : "homemade"
+  },
+  "INFORMATION" : {
+    "TITLE": "Information",
+    "LEGAL": "Legal Information",
+    "LICENSE": "Open-Source-Licences",
+    "FRIENDS": "Friends",
+    "SPONSOR": "supported by"
+  },
+
+  "NOTIFICATIONS" : {
+    "TITLE" : "Notifications",
+    "LAST" : "Last Notification",
+    "PREVIOUS" :"Previous Notification",
+    "PUSH"  : "Push Notifications",
+    "CALL" : "Emergency Call",
+    "LOCATE" : "Locate Me",
+    "HIDE" : "Hide map"
+    },
+
+  "SETTINGS"   : {
+    "TITLE" : "Settings",
+    "NOTDIVIDER" : "Notifications",
+    "PUSH" : "Allow push notifications",
+    "LANGDIVIDER" : "Language",
+    "LANGUAGE" : "Current language: English",
+    "PERSDIVIDER" : "Personalization",
+    "WIDGETS" : "Home: Activate widget style",
+    "INTDIVIDER" : "Introduction",
+    "INTRO" : "Show introduction again"
+  },
+  "ORGANIZATIONS" : {
+    "TITLE" : "Student Organizations",
+    "REFRESH" : "Pull to refresh",
+    "CANCEL" : "Cancel",
+    "SEARCH" : "Search organizations..."
+},
+  "INTRO" : {
+    "TITLE" : "Introduction",
+    "SKIP" : "Skip intro",
+    "PREVIOUS" : "Previous",
+    "NEXT" : "Next",
+    "FINAL" : " And now: try it out and have fun!",
+    "START" : "Go to App",
+    "DONE" : "Done",
+    "SLIDE1" : {
+      "TITLE" : "WELCOME",
+      "DESC" : "...to the official App of University of Mannheim. Here you'll find some hints for the first use.",
+      "LOGO" : "img/08_UM_SIGNET_EN_Weiss.png"
+    },
+    "SLIDE2" : {
+      "TITLE" : "AT ONE GLANCE",
+      "DESC" : "...you can find the highlights of the new app on the new Home Screen.",
+      "IMG" : "img/Screenshot_homescreen_en.jpg"
+    },
+    "SLIDE3" : {
+      "TITLE" : "WHAT'S NEW?",
+      "DESC" : "...this and much more. Take a look!"
+    },
+    "SLIDE4" : {
+      "TITLE" : "LOOK FORWARD TO",
+      "DESC" : "...the new Portal² functionality with personal timetable!",
+      "IMG" : "img/Screenshot_portal2_en.jpg"
+    },
+    "SLIDE5" : {
+      "TITLE" : "FEEDBACK APPRECIATED",
+      "DESC" : "...because only then we can make the app even better for your needs."
+    }
+  },
+  "PORTAL2" : {
+    "TITLE" : "Portal2 Lectures",
+    "RESPONSIBLE" : "Lecturer",
+    "GROUPNAME" : "Group",
+    "MAXSTUDENTS" : "Max. Students",
+    "MAXGUESTS" : "Max. Guests",
+    "SWS" : "Hours per Week",
+    "LINKILIAS" : "Open lecture in Ilias",
+    "LINKPORTAL2" : "Open lecture in Portal2",
+    "DATESERIES" : "Series",
+    "DETAILS" : "Details",
+    "ADD" : "Add to calendar",
+    "FILTER" : "Filtered lectures",
+    "NOFILTER" : "No lecture filtered, yet."
+  },
+  "GENERAL" : {
+    "REFRESH" : "Pull to refresh",
+    "SEARCH" : "Search...",
+    "CANCEL" : "Cancel",
+    "ERROR" : "Error: No internet connection!"
+  }
+}

@@ -1,0 +1,61 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "com.telerik.plugins.nativepagetransitions": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.umapp.de"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.umapp.de"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.umapp.de"
+        }
+    }
+}

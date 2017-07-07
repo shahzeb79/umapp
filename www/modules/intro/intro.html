@@ -1,0 +1,83 @@
+<ion-view>
+    <div style="position: relative; background-color:#003B53 !important; height:100%">
+        <ion-nav-bar class="bar-positive uni-blue">
+            <!--<ion-nav-title>{{'INTRO.TITLE' | translate}}</ion-nav-title>-->
+            <ion-nav-buttons side="left">
+                <button class="button button-light button-clear no-animation"
+                        ng-click="startApp()" ng-show="!slideIndex">
+                        <i class="icon ion-close-round"></i>
+                </button>
+                <button class="button button-light button-clear no-animation"
+                        ng-click="previous()" ng-show="slideIndex > 0">
+                        <!--{{'INTRO.PREVIOUS' | translate}}-->
+                        <i class="icon ion-arrow-left-c"></i>
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-light button-clear no-animation"
+                        ng-click="next()" ng-show="slideIndex != 4">
+                    <!--{{'INTRO.NEXT' | translate}}-->
+                    <i class="icon ion-arrow-right-c"></i>
+                </button>
+                <button class="button button-light button-clear no-animation"
+                        ng-click="startApp()" ng-show="slideIndex == 4">
+                  <i class="icon ion-checkmark-round"></i>
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-slide-box class="myslide" on-slide-changed="slideChanged(index)">
+            <ion-slide class="myslide">
+                <h3>{{'INTRO.SLIDE1.TITLE' | translate}}</h3>
+                <h4>{{'INTRO.SLIDE1.DESC' | translate}}</h4>
+                <br>
+                <img translate translate-attr-src="INTRO.SLIDE1.LOGO" style="height: 50%">
+            </ion-slide>
+            <ion-slide class="myslide">
+                <h3>{{'INTRO.SLIDE2.TITLE' | translate}}</h3>
+                <h4>{{'INTRO.SLIDE2.DESC' | translate}}</h4>
+                <br>
+                <img translate translate-attr-src="INTRO.SLIDE2.IMG" style="height: 62%">
+            </ion-slide>
+            <ion-slide class="myslide">
+                <h3>{{'INTRO.SLIDE3.TITLE' | translate}}</h3>
+                <h4>{{'INTRO.SLIDE3.DESC' | translate}}</h4>
+                <br>
+                <ion-list style="text-align:left">
+                    <ion-item class="item-icon-left" id="introItem">
+                        <i class="icon ion-home"></i>{{'MENU.HOME' | translate}}
+                    </ion-item>
+                    <ion-item class="item-icon-left" id="introItem">
+                        <i class="icon ion-clock"></i>{{'MENU.PORTAL2' | translate}}
+                    </ion-item>
+                    <ion-item class="item-icon-left" id="introItem">
+                        <i class='icon ion-android-bus'></i>{{'MENU.TIMETABLE' | translate}}
+                    </ion-item>
+                    <ion-item class="item-icon-left" id="introItem">
+                        <i class='icon ion-person'></i>{{'MENU.CONTACTS' | translate}}
+                    </ion-item>
+                    <ion-item class="item-icon-left" id="introItem">
+                        <i class='icon ion-person-stalker'></i>{{'MENU.ORGANIZATIONS' | translate}}
+                    </ion-item>
+                    <ion-item class="item-icon-left" id="introItem">
+                        <i class="icon ion-gear-a"></i>{{'MENU.SETTINGS' | translate}}
+                        <span class="badge badge-assertive">{{noti}}</span>
+                    </ion-item>
+                </ion-list>
+            </ion-slide>
+            <ion-slide class="myslide">
+                <h3>{{'INTRO.SLIDE4.TITLE' | translate}}</h3>
+                <h4>{{'INTRO.SLIDE4.DESC' | translate}}</h4>
+                <br>
+                <img translate translate-attr-src="INTRO.SLIDE4.IMG" style="height: 62%">
+            </ion-slide>
+            <ion-slide class="myslide">
+                <h3>{{'INTRO.SLIDE5.TITLE' | translate}}</h3>
+                <h4>{{'INTRO.SLIDE5.DESC' | translate}}</h4>
+                <i class="icon ion-android-favorite" style="font-size: 140px"></i>
+                <h4>{{'INTRO.FINAL' | translate}}</h4>
+                <br>
+                <a class="button button-light" href="#/app/home">{{'INTRO.START' | translate}}</a>
+            </ion-slide>
+          </ion-slide-box>
+    </div>
+</ion-view>

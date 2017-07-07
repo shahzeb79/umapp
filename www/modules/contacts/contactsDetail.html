@@ -1,0 +1,54 @@
+
+ <ion-view view-title="{{'CONTACTS.TITLE' | translate}}">
+  <ion-content >
+    <div class="list card">
+        <ion-item class="item-divider item-text-wrap">
+          {{title}}<br>
+          <b>{{firstname}} {{lastname}}</b>
+        </ion-item>
+
+        <ion-item class="item-text-wrap item-icon-left" ng-show="isAvailable(faculty)">
+          <i class='icon ion-android-people'></i>
+          <b> {{'CONTACTS.FACULTY' | translate}}: </b> <br>
+          {{faculty}}
+        </ion-item>
+
+        <ion-item class="item-text-wrap item-icon-left" ng-show="isAvailable(department)">
+          <i class='icon ion-at'></i>
+          <b> {{'CONTACTS.DEPARTMENT' | translate}}: </b> <br>
+          {{department}}
+        </ion-item>
+
+        <ion-item class="item-text-wrap item-icon-left" ng-show="isAvailable(address)">
+          <i class='icon ion-android-pin'></i>
+          <b> {{'CONTACTS.ADDRESS' | translate}}: </b> <br>
+          {{address}}
+        </ion-item>
+
+        <ion-item class="item-text-wrap item-icon-left" ng-show="isAvailable(room)">
+          <i class='icon ion-ios-home'></i>
+          <b> {{'CONTACTS.ROOM' | translate}}: </b> <br>
+          {{room}}
+        </ion-item>
+
+        <ion-item class="item-text-wrap item-icon-left" ng-show="isAvailable(phone_sec)">
+          <i class='icon ion-android-call'></i>
+          <b> {{'CONTACTS.PHONE' | translate}}: </b> <br>
+          {{phone_sec}}
+        </ion-item>
+
+        <ion-item class="item-text-wrap item-icon-left" ng-show="isAvailable(office_hours)">
+          <i class='icon ion-clock'></i>
+          <b> {{'CONTACTS.OFFICEHOURS' | translate}}: </b> <br>
+          {{office_hours}}
+        </ion-item>
+         <ion-item class="item-text-wrap item-icon-left" ng-show="isAvailable(website)">
+          <i class='icon ion-android-globe'></i>
+          <b> Website: </b> <br>
+          <a href="{{website}}">{{website}}</a>
+        </ion-item>
+
+      </div>
+  </ion-content>
+</ion-view>
+

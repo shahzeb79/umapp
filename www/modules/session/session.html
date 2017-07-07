@@ -1,0 +1,89 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive uni-blue">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left" id="nav">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+
+    <ion-content ng-controller="notiCtrl">
+      <ion-list>
+        <img id="{{'MENU.LOGO' | translate}}"/>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/home">
+          <i class="icon ion-home"></i>{{'MENU.HOME' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/news">
+          <i class="icon ion-speakerphone"></i>{{'MENU.NEWS' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/events">
+          <i class="icon ion-calendar"></i>{{'MENU.EVENTS' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/portal2">
+          <i class="icon ion-clock"></i>{{'MENU.PORTAL2' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/library">
+          <i class='icon ion-ios-book'></i>{{'MENU.LIBRARY' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/mensa">
+            <i class='icon ion-coffee'></i>{{'MENU.MENSA' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/map">
+          <i class="icon ion-map"></i>{{'MENU.MAP' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/timetable">
+          <i class='icon ion-android-bus'></i>{{'MENU.TIMETABLE' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/organizations">
+          <i class='icon ion-person-stalker'></i>{{'MENU.ORGANIZATIONS' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/contacts">
+          <i class='icon ion-person'></i>{{'MENU.CONTACTS' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/radio">
+          <i class='icon ion-radio-waves'></i>{{'MENU.RADIOACTIVE' | translate}}
+        </ion-item>
+
+        <ion-item class="item-icon-left item-icon-right" ng-click="openSports()">
+          <i class="icon ion-ios-football"></i>{{'MENU.SPORT' | translate}}
+          <i class="icon ion-share" id="leaveIcon"></i>
+        </ion-item>
+
+        <!--ion-item menu-close class="item-icon-left" href="#/app/notifications" >
+          <i class="icon ion-android-notifications"></i>{{'MENU.NOTIFICATIONS' | translate}}
+        </ion-item-->
+
+        <ion-item menu-close class="item-icon-left" href="#/app/feedback">
+          <i class="icon ion-android-favorite"></i>{{'MENU.FEEDBACK' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/settings">
+          <i class="icon ion-gear-a"></i>{{'MENU.SETTINGS' | translate}}
+        </ion-item>
+
+        <ion-item menu-close class="item-icon-left" href="#/app/information">
+          <i class="icon ion-information-circled"></i>{{'MENU.INFORMATION' | translate}}
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

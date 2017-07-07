@@ -1,0 +1,20 @@
+<ion-view view-title="{{'MAP.TITLE' | translate}}">
+    <ion-content>
+        <div class="list card">
+            <ion-item class="item-divider item-text-wrap">
+                <b>{{building}}</b><br>
+              {{category}}
+            </ion-item>
+            <ion-item class="item-text-wrap">
+                <b>{{'MAP.ROOM' | translate}}: </b>{{room}}
+            </ion-item>
+            <ion-item class="item-text-wrap ">
+              <b>{{'MAP.FLOOR' | translate}}: </b>{{floor}}
+            </ion-item>
+            <ion-item style="color:#00137c" class="item-text-wrap item-icon-left" href="#/app/map/mapview/{{building}}">
+                <i class="icon ion-compass"></i><b>{{'MAP.SHOWMAP' | translate}}</b>
+            </ion-item>
+        </div>
+
+    </ion-content>
+</ion-view>

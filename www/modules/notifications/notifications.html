@@ -1,0 +1,20 @@
+<ion-view view-title="{{'NOTIFICATIONS.TITLE' | translate}}">
+   <ion-content>
+      <div ng-if="lastNotification" class="card">
+         <div class="item item-divider">{{'NOTIFICATIONS.LAST' | translate}}
+         </div>
+         <div class="item item-body">
+           
+            {{lastNotification}}<span class="badge badge-assertive">1</span>
+         </div>
+      </div>
+      <ion-toggle ng-model="pushNotification.checked" ng-disabled=true toggle-class="uni-blue-toggle">{{'NOTIFICATIONS.PUSH' | translate}}
+      </ion-toggle>
+      <div class="button-bar">
+         <a href="tel: 1122" style="text-decoration:none;" class="button">{{'NOTIFICATIONS.CALL' | translate}}</a>
+         <a class="button" ng-click="showMap()" ng-disabled="isDisabled" ng-model="isDisabled" ng-hide="myVar1">{{'NOTIFICATIONS.LOCATE' | translate}}</a>
+         <a class="button" ng-click="hideMap()" ng-model="hide" ng-hide="myVar">{{'NOTIFICATIONS.HIDE' | translate}}</a>
+      </div>
+      <div id="map1" data-tap-disabled="true" ng-if="showstartCard"></div>
+   </ion-content>
+</ion-view>

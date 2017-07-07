@@ -1,0 +1,35 @@
+<ion-view view-title="{{'TIMETABLE.TITLE' | translate}}">
+  <ion-content>
+      <!-- pull to refresh -->
+      <ion-refresher pulling-text="{{'TIMETABLE.REFRESH' | translate}}" on-refresh="monitorRefresh()">
+      </ion-refresher>
+
+      <!-- connection error -->
+      <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+
+      <!-- next trains -->
+      <div class="list card">
+          <!-- header -->
+          <ion-item class="item-divider item-icon-left">
+              <i class="icon ion-android-locate"></i>
+              <b>{{station}}</b><br>
+              <p>{{'TIMETABLE.DEPARTURE' | translate}}{{jsonResponse.time}} {{'TIMETABLE.TIME' | translate}}</p>
+          </ion-item>
+
+          <!-- trains -->
+          <ion-item class="item-icon-left" ng-repeat="item in departures">
+             <i class="icon ion-android-{{item.transportationType}}"></i>
+              <b>{{item.timeText}}</b><span style="color: red">{{item.delay}}</span><br>
+              {{item.lineLabel}} | {{item.direction}}
+            </ion-item>
+      </div>
+
+      <!-- powered by -->
+      <a class="item item-avatar item-text-wrap" id="rnv" ng-click="openRNV()">
+          <img id="rnvIcon">
+          {{'TIMETABLE.DATA' | translate}}<br>
+          <b>Rhein-Neckar-Verkehr GmbH</b><br>
+          <em>{{'TIMETABLE.DATA2' | translate}}</em>
+      </a>
+	</ion-content>
+</ion-view>

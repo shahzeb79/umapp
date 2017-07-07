@@ -1,0 +1,43 @@
+<ion-view view-title="{{'FEEDBACK.TITLE' | translate}}">
+  </ion-nav-buttons>
+  <ion-content>
+    <!-- Pull to refresh -->
+    <ion-refresher pulling-text="{{'EVENTS.REFRESH' | translate}}" on-refresh="getQuestions()">
+    </ion-refresher>
+
+    <div id="hide1" ng-if="showError" style="display:block">{{'GENERAL.ERROR' | translate}}</div>
+
+    <div class="list card">
+
+      <label class="item item-input item-stacked-label">
+      <span class="input-label"></i><b>{{'FEEDBACK.ABOUT' | translate}}</b></span>
+      </label>
+      <div class="item item-body">
+        {{'FEEDBACK.THANKYOU' | translate}}</br>
+        <!--{{'FEEDBACK.PLEASE' | translate}}</br>-->
+        {{'FEEDBACK.MAIL' | translate}}
+      </div>
+      <label class="item item-input item-stacked-label">
+        <input type="email" placeholder="{{'FEEDBACK.OPTIONAL' | translate}}" ng-model="mail.replyTo"/>
+      </label>
+      </div>
+    </div>
+    <div class="card" ng-repeat="q in questions">
+      <label class="item item-input item-stacked-label">
+      <span class="input-label"></i><b>{{q.question_title}}</b></span>
+      </label>
+      <div class="item item-body">
+        {{q.question_text}}
+        <!-- TODO: Add CASE -> check question_type and adapt answer field accordingly -> for now: freetext!
+          <ion-toggle ng-model="q.value" toggle-class="uni-blue-toggle">
+          {{q.value}}
+          </ion-toggle> -->
+      </div>
+      <label class="item item-input">
+      <textarea placeholder="{{'FEEDBACK.ANSWER' | translate}}" ng-model="answers[$index].answer_content" rows=4></textarea>
+      </label>
+    </div>
+    <button class="button button-block button-positive uni-blue" ng-click="saveFeedback()" ng-disabled="feedbackSent">{{'FEEDBACK.SAVE' | translate}}</button>
+    </br>
+  </ion-content>
+</ion-view>

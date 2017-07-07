@@ -1,0 +1,40 @@
+<ion-view view-title="{{'LIBRARY.TITLE' | translate}}" >
+    <ion-content>
+        <!-- subheader -->
+        <div class="item item-avatar">
+            <img id="libIcon">
+            <b>{{'LIBRARY.SUBTITLE' | translate}}<br>Mannheim</b>
+        </div>
+
+        <!-- library card -->
+        <div class="list card">
+            <!-- button to open library website in browser -->
+            <a class="item item-icon-left item-icon-right" ng-click="openWebsite()">
+                <i class="icon ion-earth"></i>
+                {{'LIBRARY.SITE' | translate}}
+                <i class="icon ion-share" id="leaveIcon"></i>
+            </a>
+
+            <!-- button to open primo in browser -->
+            <a class="item item-icon-left item-icon-right" ng-click="openPrimo()">
+                <i class="icon ion-search"></i>
+                {{'LIBRARY.PRIMO' | translate}} Primo
+                <i class="icon ion-share" id="leaveIcon"></i>
+            </a>
+
+            <!-- button to open ISBN scanner -->
+            <a class="item item-icon-left item-icon-right" ng-click="scanISBN()">
+                <i class="icon ion-qr-scanner"></i>
+                ISBN Scanner
+                <i class="icon ion-ios-arrow-right" id="leaveIcon"></i>
+            </a>
+
+            <!-- button to open opening hours in browser -->
+            <a class="item item-icon-left item-icon-right" ng-click="openTime()">
+                <i class="icon ion-clock"></i>
+                {{'LIBRARY.TIME' | translate}}
+                <i class="icon ion-share" id="leaveIcon"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
