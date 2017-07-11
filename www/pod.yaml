@@ -1,0 +1,35 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ps-config-svc
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: ps-config-svc
+    spec:
+      containers:
+      - name: ps-config-access
+        image: d066567/psconfigaccesssvc:latest
+        ports:
+        - containerPort: 3000
+      - name: ps-config-storage
+        image: d066567/psconfigstoragesvc:latest
+        ports:
+        - containerPort: 3300
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ps-config-svc
+  labels:
+    run: ps-config-svc
+spec:
+  type: ClusterIP
+  ports:
+  - name: ps-config-access
+    port: 3000
+    targetPort: 3000
+  selector:
+    run: ps-config-svc
