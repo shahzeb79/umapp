@@ -1,0 +1,313 @@
+swagger: "2.0"
+info:
+  title: "Patient Summary API"
+  description: "API provided to the Patient Summary UI to query configurations and patient data"
+  version: "1.0.0"
+basePath: "/ps/app/api/v1/"
+# FIXME: Switch to HTTPS when ready
+schemes:
+- "http"
+paths:
+  /configs:
+    get:
+      summary: "Get the list of configs available to the current user"
+      description: "Get the list of configurations, that the user is allowed to use, based on the current users assignments"
+      operationId: "listConfigs"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/PSSimpleConfigMeta"
+        500:
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/PSError"
+  /configs/{configId}:
+    get:
+      summary: "Get the specified configuration"
+      description: "Get the configuration content"
+      operationId: "getConfig"
+      parameters:
+      - name: "configId"
+        in: "path"
+        description: "ID of the configuration"
+        required: true
+        type: "integer"
+        format: "int64"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/PSConfig"
+        400:
+          description: "Invalid ID supplied"
+          schema:
+            $ref: "#/definitions/PSError"
+        404:
+          description: "Config not found or the user is not allowed to see it"
+          schema:
+            $ref: "#/definitions/PSError"
+        500:
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/PSError"
+  /patients/{patientId}:
+    get:
+      summary: "Get the specified patient's data"
+      description: "Get the data for the given patient based on the currently selected configuration"
+      operationId: "getPatient"
+      parameters:
+      - name: "patientId"
+        in: "path"
+        description: "ID of the patient"
+        required: true
+        type: "string"
+      - name: "configId"
+        in: "query"
+        description: "ID of the configuration"
+        required: true
+        type: "integer"
+        format: "int64"
+      - name: "types"
+        in: "query"
+        description: "interaction types to be returned"
+        type: "array"
+        items:
+          type: "string"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/PSPatientData"
+        400:
+          description: "Invalid ID supplied"
+          schema:
+            $ref: "#/definitions/PSError"
+        404:
+          description: "Config not found or the user is not allowed to see it"
+          schema:
+            $ref: "#/definitions/PSError"
+        500:
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/PSError"
+definitions:
+  PSPatientData:
+    type: "object"
+  PSConfig:
+    type: "object"
+    properties:
+      meta:
+        $ref: "#/definitions/PSSimpleConfigMeta"
+      config:
+        $ref: "#/definitions/PSConfigObject"
+  PSSimpleConfigMeta:
+    type: "object"
+    properties:
+      configId:
+        type: "integer"
+        format: "int64"
+      configName:
+        type: "string"
+      error:
+        $ref: "#/definitions/PSError"
+    required:
+      - configId
+      - configName
+  PSConfigObject:
+    type: "object"
+    properties:
+      masterdata:
+        $ref: "#/definitions/PSConfigMasterData"
+      inspectorOptions:
+        $ref: "#/definitions/PSConfigInspectorOptions"
+      lanes:
+        $ref: "#/definitions/PSConfigLanes"
+    required:
+      - masterdata
+      - inspectorOptions
+      - lanes
+  PSConfigMasterData:
+    type: object
+    properties:
+      annotations:
+        $ref: "#/definitions/PSConfigAnnotation"
+      attributes:
+        $ref: "#/definitions/PSConfigMasterDataAttributes"
+      details:
+        $ref: "#/definitions/PSConfigMasterDataSubheader"
+      title:
+        $ref: "#/definitions/PSConfigMasterDataHeader"
+    required:
+      - annotations
+      - attributes
+      - details
+      - title
+  PSConfigAnnotation:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        type: string
+        minLength: 1
+  PSConfigMasterDataAttributes:
+    type: object
+    additionalProperties:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ["datetime", "time", "num", "date", "text", "freetext"]
+        resource:
+          type: string
+        source:
+          $ref: "#/definitions/AttributeSource"
+      required:
+        - resource
+        - type
+        - source
+  PSConfigMasterDataHeader:
+    type: array
+    items:
+      type: object
+      properties:
+        pattern:
+          type: string
+      required:
+        - pattern
+  PSConfigMasterDataSubheader:
+    type: array
+    items:
+      type: object
+      properties:
+        pattern:
+          type: string
+      required:
+        - pattern
+  PSConfigInspectorOptions:
+    type: object
+    properties:
+      overview:
+        type: object
+        properties:
+          visible:
+            type: boolean
+        required:
+          - visible
+      tabExtensions:
+        type: array
+        items:
+          type: object
+    required:
+      - overview
+  PSConfigLanes:
+    type: array
+    items:
+      $ref: "#/definitions/PSConfigLane"
+  PSConfigLane:
+    type: object
+    properties:
+      title:
+        type: string
+      color:
+        type: string
+        enum: ["LightOrange", "LightGreen", "LightGold", "LightPurple", "LightPink", "MediumOrange", "MediumGreen", "MediumGold", "MediumPurple", "MediumPink", "DarkOrange", "DarkGreen", "DarkGold", "DarkPurple", "DarkPink"]
+      visible:
+        type: boolean
+      initiallyFiltered:
+        type: boolean
+      laneType:
+        type: string
+      tilesHidden:
+        type: boolean
+      interactions:
+        type: array
+        items:
+          $ref: "#/definitions/PSConfigInteraction"
+  PSConfigInteraction:
+    type: object
+    properties:
+      source:
+        type: string
+      visible:
+        type: boolean
+      annotations:
+        $ref: "#/definitions/PSConfigAnnotation"
+      attributes:
+        type: array
+        items:
+          $ref: "#/definitions/PSConfigInteractionAttribute"
+      name:
+        type: string
+  PSConfigInteractionAttribute:
+    type: object
+    properties:
+      annotations:
+        type: array
+        items:
+          type: string
+      firstTileAttribute:
+        type: boolean
+      formatter:
+        type: object
+        properties:
+          pattern:
+            type: string
+          values:
+            type: array
+      id:
+        type: string
+      name:
+        type: string
+      plottable:
+        type: boolean
+      secondTileAttribute:
+        type: boolean
+      source:
+        $ref: "#/definitions/AttributeSource"
+      type:
+        type: string
+        enum: ["datetime", "time", "num", "date", "text", "freetext"]
+      visible:
+        type: boolean
+    required:
+      - id
+      - name
+      - source
+      - type
+  AttributeSource:
+    type: array
+    minimum: 1
+    items:
+      type: object
+      properties:
+        formatter:
+          type: string
+        multiple:
+          type: boolean
+        path:
+          type: string
+        type:
+          type: string
+      required:
+        - path
+        - type
+  PSError:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+        description: "Error Message"
+      code:
+        type: string
+        description: "Error code"
+    required:
+      - message
