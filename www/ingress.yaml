@@ -13,4 +13,4 @@ spec:
       - path: /config
         backend:
           serviceName: ps-config-ui
-          servicePort: 8080
+          servicePort: 8000
