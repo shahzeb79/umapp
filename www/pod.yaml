@@ -1,19 +1,19 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: ps-config-svc
+  name: ps-config
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
-        run: ps-config-svc
+        run: ps-config
     spec:
       containers:
       - name: ps-config-access
         image: d066567/psconfigaccesssvc:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 3100
       - name: ps-config-storage
         image: d066567/psconfigstoragesvc:latest
         ports:
@@ -22,14 +22,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ps-config-svc
+  name: ps-config
   labels:
-    run: ps-config-svc
+    run: ps-configcd 
 spec:
   type: ClusterIP
   ports:
   - name: ps-config-access
-    port: 3000
-    targetPort: 3000
+    port: 3100
+    targetPort: 3100
   selector:
-    run: ps-config-svc
+    run: ps-config
