@@ -1,13 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
- name: ps-app-ui
+  name: ps-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: ps-static-ip
 spec:
- rules:
-  - host: ps-app.k8s.ui.org
-    http:
-     paths:
-      - path: '/'
-        backend:
-         serviceName: ps-app-ui
-         servicePort: 8000
+  backend:
+    serviceName: ps-app-ui
+    servicePort: 8000
