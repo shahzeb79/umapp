@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: ps-app-ui
+spec:
+ rules:
+  - host: ps-app.k8s.ui.org
+    http:
+     paths:
+      - path: '/'
+        backend:
+         serviceName: ps-app-ui
+         servicePort: 8000
