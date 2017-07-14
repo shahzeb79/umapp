@@ -24,7 +24,7 @@ kind: Service
 metadata:
   name: ps-config
   labels:
-    run: ps-configcd 
+    run: ps-config
 spec:
   type: ClusterIP
   ports:
