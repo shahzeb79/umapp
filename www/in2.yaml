@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+  name: ps-ingress
+spec:
+  rules:
+    http:
+      paths:
+      - backend:
+          serviceName: ps-app-ui
+          servicePort: 8000
+        path: /something
