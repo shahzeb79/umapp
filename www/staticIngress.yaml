@@ -5,6 +5,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: ps-static-ip
 spec:
-  backend:
-    serviceName: ps-app-ui
-    servicePort: 8000
+  rules:
+  - http:
+      paths:
+      - path: "/ps/app/ui/"
+        backend:
+          serviceName: ps-app-ui
+          servicePort: 8000
