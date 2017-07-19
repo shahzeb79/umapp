@@ -12,3 +12,7 @@ spec:
         backend:
           serviceName: ps-app-ui
           servicePort: 8000
+      - path: /sap/ui5/1/
+       backend:
+         serviceName: ps-app-ui
+         servicePort: 8000
