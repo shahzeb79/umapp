@@ -6,7 +6,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: "/myapp/"
+      - path: "/"
         backend:
           serviceName: ps-app-ui
           servicePort: 8000
