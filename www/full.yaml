@@ -1,0 +1,134 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ps-app-ui
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: ps-app-ui
+    spec:
+      containers:
+      - name: ps-app-ui
+        image: d066567/ps-app-ui:latest
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ps-app-ui
+  labels:
+    run: ps-app-ui
+spec:
+  type: NodePort
+  ports:
+  - port: 85
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    run: ps-app-ui
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ps-app-svc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: ps-app-svc
+    spec:
+      containers:
+      - name: ps-app-svc
+        image: d066567/ps-app-svc:latest
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ps-app-svc
+  labels:
+    run: ps-app-svc
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 3000
+    protocol: TCP
+  selector:
+    run: ps-app-svc
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ps-config
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: ps-config
+    spec:
+      containers:
+      - name: ps-config-access
+        image: d066567/psconfigaccesssvc:latest
+        ports:
+        - containerPort: 3100
+      - name: ps-config-storage
+        image: d066567/psconfigstoragesvc:latest
+        ports:
+        - containerPort: 3300
+      - name: ps-config-admin
+        image: d066567/psconfigadminsvc:latest
+        ports:
+        - containerPort: 3500
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ps-config
+  labels:
+    run: ps-config
+spec:
+  type: NodePort
+  ports:
+  - name: ps-config-access
+    port: 3100
+    targetPort: 3100
+  - name: ps-config-admin
+    port: 3500
+    targetPort: 3500
+  selector:
+    run: ps-config
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /ps/dev/
+        backend:
+          serviceName: ps-app-svc
+          servicePort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+  name: ps-ingress-1
+spec:
+  rules:
+  - http:
+      paths:
+      - path: "/ps/config/"
+        backend:
+          serviceName: ps-config
+          servicePort: 3100 
