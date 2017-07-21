@@ -6,14 +6,9 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: ps-ingress.bar.com
-    http:
+  - http:
       paths:
-      - path: /
+      - path: /myapp/
         backend:
           serviceName: ps-app-ui
-          servicePort: 8000
-      - path: /bar
-        backend:
-          serviceName: ps-app-svc
-          servicePort: 3000
+          servicePort: 80
