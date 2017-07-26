@@ -2,6 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ps-ingress-1
+  annotations:
+   ingress.kubernetes.io/rewrite-target: /ps/app/ui
 spec:
   rules:
   - http:
