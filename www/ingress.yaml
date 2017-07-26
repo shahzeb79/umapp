@@ -8,9 +8,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: nginx
-          servicePort: 80
-      - path: /ps/storage
-        backend:
-          serviceName: ps-config
+          serviceName: ps-app-svc
           servicePort: 80
