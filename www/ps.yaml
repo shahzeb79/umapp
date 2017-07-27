@@ -11,4 +11,4 @@ spec:
       - path: /ps/svc
         backend:
           serviceName: ps-app-svc
-          servicePort: 80
+          servicePort: 3000
