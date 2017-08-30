@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        run: ps-app-ui
+        run: ps-app-uii
     spec:
       containers:
       - name: ps-app-ui
