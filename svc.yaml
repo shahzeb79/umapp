@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: ps-app-ui
   labels:
-    run: ps-app-ui
+    run: ps-app-uiii
 spec:
   type: ClusterIP
   ports:
