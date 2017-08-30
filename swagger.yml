@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  title: "Patient Summary API"
+  title: "Patient Summary API 1.0"
   description: "API provided to the Patient Summary UI to query configurations and patient data"
   version: "1.0.0"
 basePath: "/ps/app/api/v1/"
