@@ -11,4 +11,4 @@ spec:
     targetPort: 8000
     protocol: TCP
   selector:
-    run: ps-app-ui
+    run: ps-app-uii
