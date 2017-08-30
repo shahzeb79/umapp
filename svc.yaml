@@ -5,7 +5,7 @@ metadata:
   labels:
     run: ps-app-ui
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 80
     targetPort: 8000
